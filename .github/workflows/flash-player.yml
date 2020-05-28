@@ -1,0 +1,14 @@
+name: Flash Player
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: joshtynjala/setup-adobe-air-action@master
+      - name: Compile SWF
+        run: |
+          mxmlc -output bin/GithubActionsExample.swf src/Main.as
