@@ -1,4 +1,4 @@
-name: Flash Player
+name: Compile SWF
 
 on: [push]
 
