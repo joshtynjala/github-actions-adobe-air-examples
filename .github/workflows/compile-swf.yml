@@ -5,10 +5,11 @@ on: [push]
 jobs:
   build:
     runs-on: macos-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: joshtynjala/setup-adobe-air-action@master
+      - uses: actions/checkout@v3
+      - uses: joshtynjala/setup-adobe-air-action@v2
+        air-version: "50.0"
+        accept-license: true
       - name: Compile SWF
         run: |
           mxmlc -output bin/GithubActionsExample.swf src/Main.as
